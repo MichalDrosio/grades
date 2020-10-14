@@ -1,0 +1,11 @@
+{{ grade.candidate.full_name }}
+<h1>{{ grade.task.title}}</h1>
+<p>{{ grade.task.content}}</p>
+{{ grade.task.answer }}
+
+
+<form method="post">
+    {{ form_judge.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Oceń">
+</form>

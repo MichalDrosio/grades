@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{{ task.content }}
+
+<form method="post">
+    {{ solution_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Zapisz odpowiedź">
+</form>

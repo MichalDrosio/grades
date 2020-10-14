@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block candidate %}
+
+{% endblock %}
+
+{% block recruiter %}
+
+{% endblock %}
+
+{% block tasks %}
+    Rekruter: {{ recruiter.full_name }}
+    <p><a href="{% url 'recruiters:add_task' %}">Dodaj zadanie</a> </p>
+    <p><a href="{% url 'tasks:show_all_task' %}" >Lista zadań</a></p>
+    <p><a href="{% url 'recruiters:add_task_to_candidate'%}">Dodaj kandydatom pytania</a> </p>
+    <p><a href="{% url 'recruiters:candidate_list' %}">Lista kandydatów</a> </p>
+
+
+
+{% endblock %}
+
+
+

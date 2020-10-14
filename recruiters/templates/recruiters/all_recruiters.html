@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block candidate %}
+
+{% endblock %}
+
+
+{% block recruiter %}
+{% for recruiter in recruiters %}
+    <li><a href="{{ recruiter.get_absolute_url }}">{{ recruiter.full_name }}</a></li>
+    {% endfor %}
+{% endblock %}

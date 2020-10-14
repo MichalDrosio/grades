@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block candidate %}
+<p><a href="{% url 'candidate:show_all_candidate' %}">Kandydat</a></p>
+
+{% endblock %}
+{% block tasks %}
+
+{% endblock %}
+{% block recruiter %}
+<a href="{% url 'recruiters:show_all_recruiters' %}">Rekruter</a>
+{% endblock %}
+
+</body>
+</html>

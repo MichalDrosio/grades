@@ -1,0 +1,4 @@
+{% for candidate in candidates %}
+    <li>{{ candidate.full_name }}</li>
+    <li><a href="{% url 'recruiters:show_task_candidate' candidate.id %}">Lista zadań</a></li>
+{% endfor %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block candidate %}
+{% for candidate in candidates %}
+    <li>{{ candidate.full_name }}</li>
+    <a href="{% url 'candidate:show_tasks' candidate.id %}">Zadania</a>
+{% endfor %}
+{% endblock %}
+
+
+{% block recruiter %}
+
+{% endblock %}

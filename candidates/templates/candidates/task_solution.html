@@ -1,0 +1,10 @@
+
+<p>{{ task.title }}</p>
+{{ task.content }}
+<p>{{ task.answer }}</p>
+
+<form method="post">
+    {{ solution_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Zapisz">
+</form>

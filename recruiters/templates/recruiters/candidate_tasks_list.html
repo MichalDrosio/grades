@@ -1,0 +1,12 @@
+{{ candidate.full_name }}
+{% for g in garde %}
+{#    <li>{{ g.task.title }}</li>#}
+{#        <p>{{ g.task.content }}</p>#}
+{#    {% if g.value is not None %}#}
+{#        Ocena: {{ g.value }}#}
+{#    {% else %}#}
+
+      <ul>{{ g.task.title }} <a href="{{ g.get_absolute_url }}">Oceń</a></ul>
+{#    {% endif %}#}
+{% endfor %}
+

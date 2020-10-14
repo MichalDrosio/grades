@@ -1,0 +1,6 @@
+<p>Dodaj zadanie</p>
+<form method="post">
+    {{ add_task_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Zapisz">
+</form>

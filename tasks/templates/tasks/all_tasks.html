@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block candidate %}
+
+{% endblock %}
+
+{% block recruiter %}
+
+{% endblock %}
+
+{% block tasks %}
+    {% for task in tasks %}
+        <li>{{ task.title }}</li>
+            <p>{{ task.content }}</p>
+
+    {% endfor %}
+
+{% endblock %}
