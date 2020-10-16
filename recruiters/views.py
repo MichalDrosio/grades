@@ -5,7 +5,7 @@ from grade.models import Grade
 from recruiters.forms import CreateTaskForm, AddTaskCandidateForm, JudgeTaskForm
 from recruiters.models import Recruiter
 # Create your views here.
-from tasks.models import Task
+
 
 
 def index(request):
@@ -27,11 +27,11 @@ def add_task(request):
     if request.method == 'POST':
         if add_task_form.is_valid():
             add_task_form.save()
-            messages.success(request, 'Dodano zadanie')
+
             return redirect('tasks:show_all_task')
     else:
         add_task_form = CreateTaskForm()
-        messages.error(request, 'Nie udało się dodać zadania')
+
     return render(request, 'recruiters/add_task.html', {'add_task_form': add_task_form})
 
 
@@ -63,11 +63,13 @@ def judge_task_candidate(request, grade_id):
 
     if request.method == 'POST':
         form_judge = JudgeTaskForm(request.POST, instance=grade)
-
-        if form_judge.is_valid():
-            form_judge.save()
-            messages.success(request, 'oceniono')
-            return redirect('recruiters:show_all_recruiters')
+        if grade.value:
+            messages.error(request, 'zadanie bylo juz oceniane')
+        else:
+            if form_judge.is_valid():
+                form_judge.save()
+                messages.success(request, 'zadanie oceniane')
+                redirect('recruiters:candidate_list')
 
     else:
         form_judge = JudgeTaskForm()
